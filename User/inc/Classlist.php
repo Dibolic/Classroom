@@ -1,6 +1,6 @@
 <div class="row">
     <?php
-    foreach ($ClassInfor as &$Class) {
+    foreach ($ClassInfor as $Class) {
         echo "hello";
     ?>
         <div class="col-xs-12 p-1">
