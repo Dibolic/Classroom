@@ -25,7 +25,7 @@ window.onload = (event) => {
         shareContent.style.display = "block";
         partition.style.display = "none";
     });
-    $.get( "http://classroomdemo.herokuapp.com/User/inc/GetAction.php", function( data ) {
+    $.get( "https://classroomdemo.herokuapp.com/User/inc/GetAction.php", function( data ) {
         var action = JSON.parse(data).action;
         if(action == 'ClassStream')
             ChangeFunctionBtnColor($('.stream-button'));
