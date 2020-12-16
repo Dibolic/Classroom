@@ -1,5 +1,4 @@
 <?php
- print_r("Hello");
 
 if(isset($_GET['search']) && !empty($_GET['search'])){
     $search = '%'.$_GET['search'].'%';
@@ -33,5 +32,6 @@ else{
     $ClassInfor = $data['data'];
     $_SESSION['allclass'] = $ClassInfor;
 }
+ print_r($ClassInfor);
  
 ?>
