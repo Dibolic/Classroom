@@ -1,6 +1,7 @@
 <div class="row">
     <?php
     foreach ($ClassInfor as &$Class) {
+        echo "hello";
     ?>
         <div class="col-xs-12 p-1">
             <div class="class-room">
@@ -48,7 +49,6 @@
     }
     // $arr is now array(2, 4, 6, 8)
     unset($Class); // break the reference with the last element
-    print_r($ClassInfor);
     ?>
 
 </div>
