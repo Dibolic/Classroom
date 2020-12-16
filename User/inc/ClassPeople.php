@@ -246,8 +246,8 @@ if($_SESSION['ClassRole']!=='student'){
 			$database = new BaseModel();
 			$sql = "select ID, CONCAT(Ho,' ',Ten) as HoTen ,userIMG from XetSVThamGiaLopHoc inner join account on  XetSVThamGiaLopHoc.username = account.username where XetSVThamGiaLopHoc.MaLopHoc = ? ";
 			$param = array('s', &$_SESSION['ClassCode']);
-			$data = $database->query_prepared($sql, $param);
 	print_r($data);
+			$data = $database->query_prepared($sql, $param);
 			$StudentsAttendClass = array();
 			if($data['code']===0){
 				if($data['data']!==array()){
