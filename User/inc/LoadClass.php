@@ -1,5 +1,5 @@
 <?php
-
+ print_r("Hello");
 
 if(isset($_GET['search']) && !empty($_GET['search'])){
     $search = '%'.$_GET['search'].'%';
