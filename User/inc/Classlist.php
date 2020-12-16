@@ -1,6 +1,6 @@
 <div class="row">
     <?php
-    echo "hello";
+    print_r("Hello");
     foreach ($ClassInfor as $Class) {
         
     ?>
