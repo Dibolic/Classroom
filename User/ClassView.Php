@@ -1,5 +1,7 @@
 <?php
 session_start();
+print_r("hello");
+die();
 // front controller
 if((!isset($_SESSION['username']))||(!isset($_SESSION['password']))||(!isset($_SESSION['role']))){
     header('Location: ../index.php');
