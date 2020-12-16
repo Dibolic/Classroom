@@ -110,7 +110,7 @@ else{
         </div>
         <div id="navbar-function" class="col-lg-6 bg-light mr-1">
             <div class="function-button-group d-flex justify-content-center">
-                <a href="./ClassView.Php?Action=ClassStream">
+                <a href="./ClassView.php?Action=ClassStream">
                     <div class="navbar-brand function-button stream-button px-4 pt-3" <?php
                     if(isset($_SESSION['Action'])){
                         if($_SESSION['Action']==='ClassStream'){
@@ -129,7 +129,7 @@ else{
                         Bài tập
                     </div>
                 </a>
-                <a href="./ClassView.Php?Action=ClassPeople">
+                <a href="./ClassView.php?Action=ClassPeople">
                     <div class="navbar-brand function-button people-button px-4 pt-3" <?php
                     if(isset($_SESSION['Action']))
                         if($_SESSION['Action']==='ClassPeople')
@@ -203,7 +203,7 @@ else{
     <div class="function-button-group-container bg-light col-12 d-flex justify-content-center">
         <div id="navbar-function-under" class="col-lg-6 bg-light mr-1">
             <div class="function-button-group d-flex justify-content-center">
-                <a href="./ClassView.Php?Action=ClassStream">
+                <a href="./ClassView.php?Action=ClassStream">
                     <div class="navbar-brand function-button stream-button px-4 pt-3" <?php
                     if(isset($_SESSION['Action'])){
                         if($_SESSION['Action']==='ClassStream'){
@@ -222,7 +222,7 @@ else{
                         Bài tập
                     </div>
                 </a>
-                <a href="./ClassView.Php?Action=ClassPeople">
+                <a href="./ClassView.php?Action=ClassPeople">
                     <div class="navbar-brand function-button people-button px-4 pt-3" <?php
                     if(isset($_SESSION['Action']))
                         if($_SESSION['Action']==='ClassPeople')
