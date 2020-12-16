@@ -32,5 +32,5 @@ else{
     $ClassInfor = $data['data'];
     $_SESSION['allclass'] = $ClassInfor;
 }
-
+print_r($ClassInfor);
 ?>
