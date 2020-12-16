@@ -64,7 +64,7 @@ foreach ($peopleInfor as &$someone) {
                                 <td>
                                     <div class="main1">
                                         <div class="section-img">
-                                            <img src="../<?php echo $Teacher['userIMG'] ?>" alt="img">
+                                            <img src="..\<?php echo $Teacher['userIMG'] ?>" alt="img">
                                         </div>
                                         <h4 class="user-name"><?php echo $Teacher['Ho'].' '.$Teacher['Ten'] ?></h4>
                                     </div>
@@ -137,7 +137,7 @@ foreach ($peopleInfor as &$someone) {
                                     <td>
                                         <div class="main1">
                                             <div class="section-img">
-                                                <img src="../<?php echo $Student['userIMG'] ?>" alt="img">
+                                                <img src="..\<?php echo $Student['userIMG'] ?>" alt="img">
                                             </div>
                                             <h4 class="user-name"><?php echo $Student['Ho'].' '.$Student['Ten'] ?></h4>
                                         </div>
@@ -241,55 +241,57 @@ if($_SESSION['ClassRole']!=='student'){
 
                     <table class="table">
                         <tbody>
-                       	<?php
-			//Danh sach sinh vien muon tham gia lop hoc bang ma code
-			$database = new BaseModel();
-			$sql = "select ID, CONCAT(Ho,' ',Ten) as HoTen ,userIMG from XetSVThamGiaLopHoc inner join account on  XetSVThamGiaLopHoc.username = account.username where XetSVThamGiaLopHoc.MaLopHoc = ?";
+                        <?php
+                        //Danh sach sinh vien muon tham gia lop hoc bang ma code
+                        $database = new BaseModel();
+                        $sql = "select ID, CONCAT(Ho,' ',Ten) as HoTen ,userIMG from XetSVThamGiaLopHoc inner join account on  XetSVThamGiaLopHoc.username = account.username where XetSVThamGiaLopHoc.MaLopHoc = ? ";
                         $param = array('s', &$_SESSION['ClassCode']);
-			$data = $database->query_prepared($sql, $param);
-			$StudentsAttendClass = array();
-			if($data['code']===0){
-				if($data['data']!==array()){
-					$StudentsAttendClass = $data['data'];
-				}
-			}
-			?>
-			<?php
-			foreach ($StudentsAttendClass as $student){
-			?>
-			<tr>
-			<td>
-			<div class="main1">
-				<div class="section-img">
-				<img src="../<?php echo $student['userIMG'] ?>" alt="img">
-				</div>
-				<h4 class="user-name"><?php echo $student['HoTen'] ?></h4>
-			</div>
-			</td>
-			<td>
-			<div class="btn-group d-flex justify-content-center" <?php echo 'id="'.$student['ID'].'"'?>>
-				<!-- Nút xóa-->
-				<span class="mr-2">
-					<button type="button" class="btn btn-icon btn-light btn-outline-primary btn-remove-people btn-removing-student">
-					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-dash">
-					  <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
-					</svg>
-					</button>
-				</span>
-				<!-- Nút thêm-->
-				<span class="mr-2">
-					<button type="button" class="btn btn-icon btn-light btn-outline-primary btn-adding-student">
-					<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-plus" fill="currentColor">
-					  <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-					</svg>
-					</button>
-				</span>
-			</div>
-			</td>
-			</tr>
+                        $data = $database->query_prepared($sql, $param);
+                        $StudentsAttendClass = array();
+                        if($data['code']===0){
+                            if($data['data']!==array()){
+                                $StudentsAttendClass = $data['data'];
+                            }
+                        }
+                        ?>
+                    <?php
+                    foreach ($StudentsAttendClass as $student){
+                    ?>
+                        <tr>
+                            <td>
+                                <div class="main1">
+                                    <div class="section-img">
+                                        <img src="../<?php echo $student['userIMG'] ?>" alt="img">
+                                    </div>
+                                    <h4 class="user-name"><?php echo $student['HoTen'] ?></h4>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="btn-group d-flex justify-content-center" <?php echo 'id="'.$student['ID'].'"'?>>
+                                    <!-- Nút xóa-->
+                                    <span class="mr-2">
+                                            <button type="button" class="btn btn-icon btn-light btn-outline-primary btn-remove-people btn-removing-student">
+                                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-dash">
+                                                  <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                    <!-- Nút thêm-->
+                                    <span class="mr-2">
+                                            <button type="button" class="btn btn-icon btn-light btn-outline-primary btn-adding-student">
+                                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-plus" fill="currentColor">
+                                                  <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                </div>
+                            </td>
+                        </tr>
 
-			<?php
-			}
+                    <?php
+                    }
+                    ?>
+
                         </tbody>
                     </table>
                 </div>
