@@ -64,7 +64,7 @@ foreach ($peopleInfor as &$someone) {
                                 <td>
                                     <div class="main1">
                                         <div class="section-img">
-                                            <img src="..\<?php echo $Teacher['userIMG'] ?>" alt="img">
+                                            <img src="../<?php echo $Teacher['userIMG'] ?>" alt="img">
                                         </div>
                                         <h4 class="user-name"><?php echo $Teacher['Ho'].' '.$Teacher['Ten'] ?></h4>
                                     </div>
@@ -137,7 +137,7 @@ foreach ($peopleInfor as &$someone) {
                                     <td>
                                         <div class="main1">
                                             <div class="section-img">
-                                                <img src="..\<?php echo $Student['userIMG'] ?>" alt="img">
+                                                <img src="../<?php echo $Student['userIMG'] ?>" alt="img">
                                             </div>
                                             <h4 class="user-name"><?php echo $Student['Ho'].' '.$Student['Ten'] ?></h4>
                                         </div>
