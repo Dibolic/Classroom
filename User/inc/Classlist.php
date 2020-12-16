@@ -1,7 +1,8 @@
 <div class="row">
     <?php
+    echo "hello";
     foreach ($ClassInfor as $Class) {
-        echo "hello";
+        
     ?>
         <div class="col-xs-12 p-1">
             <div class="class-room">
